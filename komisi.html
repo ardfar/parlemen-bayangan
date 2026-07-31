@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>parlemenbayangan.id — mengawal kabinet bayangan, menguji gagasan</title>
+  <title>Komisi Parlemen — parlemenbayangan.id</title>
   <meta name="description"
     content="parlemenbayangan.id — Lembaga independen yang berfungsi mengawasi kabinet bayangan.">
   <meta property="og:description" content="Lembaga independen yang berfungsi mengawasi kabinet bayangan.">
@@ -1302,13 +1302,135 @@
         grid-template-columns: 1fr;
       }
     }
-  </style>
+  
+    /* --- NEW PAGES EXTRA STYLES --- */
+    .page-hero {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 160px 24px 80px;
+      position: relative;
+      background: var(--bg);
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(220, 38, 38, 0.08) 0%, transparent 60%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .page-hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      line-height: 1.1;
+      margin-bottom: 24px;
+      color: var(--text-primary);
+      position: relative;
+      z-index: 2;
+    }
+    .page-hero h1 .highlight { color: var(--red); }
+    .page-hero p {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 700px;
+      line-height: 1.6;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .content-section {
+      padding: 80px 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .content-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 2.2rem;
+      margin-bottom: 32px;
+      color: var(--text-primary);
+    }
+    .editorial-text {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: var(--text-secondary);
+    }
+    .editorial-text p { margin-bottom: 24px; }
+    
+    /* Timeline */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 20px 0;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background: var(--border);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
+    .timeline-item {
+      padding: 20px 40px;
+      position: relative;
+      width: 50%;
+    }
+    .timeline-item:nth-child(odd) { left: 0; text-align: right; }
+    .timeline-item:nth-child(even) { left: 50%; }
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: var(--bg);
+      border: 4px solid var(--red);
+      border-radius: 50%;
+      top: 24px;
+    }
+    .timeline-item:nth-child(odd)::after { right: -10px; }
+    .timeline-item:nth-child(even)::after { left: -10px; }
+    .timeline-content h3 { font-family: 'Outfit', sans-serif; font-size: 1.4rem; margin-bottom: 8px; color: var(--text-primary); }
+    .timeline-content p { font-size: 1rem; color: var(--text-secondary); line-height: 1.6; }
+    
+    @media (max-width: 768px) {
+      .timeline::before { left: 20px; }
+      .timeline-item { width: 100%; padding-left: 60px; padding-right: 20px; text-align: left !important; left: 0 !important; }
+      .timeline-item::after { left: 10px !important; right: auto !important; }
+    }
+    
+    .light-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+      transition: all 0.3s;
+    }
+    .light-card:hover { border-color: var(--red); box-shadow: 0 15px 40px rgba(220,38,38,0.08); transform: translateY(-5px); }
+    
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
+    
+    @media (max-width: 768px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
+
+</style>
 </head>
-
 <body>
-
-  <!-- NAV -->
-  <nav id="navbar">
+<nav id="navbar">
     <div class="nav-logo">
       <a href="#"><img src="./assets/logo/logo-screen-transparent.png" alt="parlemenbayangan.id"></a>
     </div>
@@ -1321,6 +1443,7 @@
       </svg>
     </button>
     <div class="nav-links">
+      <a href="./index.html">← Beranda</a>
       <a href="./manifesto.html">Manifesto</a>
       <a href="./kriteria.html">Kriteria</a>
       <a href="./komisi.html">Komisi</a>
@@ -1330,467 +1453,152 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-logo-wrap">
-      <img src="./assets/logo/logo-screen-transparent.png" alt="parlemenbayangan.id" class="hero-logo-img">
-    </div>
-    <p class="hero-tagline">mengawal kabinet bayangan, menguji gagasan</p>
-    <div class="scroll-hint">
-      <span>scroll</span>
-      <div class="scroll-line"></div>
-    </div>
+  <section class="page-hero">
+    <div class="section-label reveal">Struktur Komisi</div>
+    <h1 class="reveal">Ramping, strategis, <span class="highlight">berbasis urgensi.</span></h1>
+    <p class="reveal">Lima komisi yang dirancang untuk mengawal isu-isu paling krusial. Merespons portofolio Kabinet Bayangan secara langsung dan efektif.</p>
   </section>
 
-  <!-- MANIFESTO -->
-  <section class="manifesto" id="manifesto">
-    <div class="section-label reveal">Manifesto</div>
-    <h2 class="reveal">Mengawal Kabinet Bayangan, memastikan setiap kebijakan <span class="highlight">teruji.</span>
-    </h2>
-    <div class="manifesto-text">
-      <p class="reveal">Hari ini, gedung wakil rakyat lebih sering sunyi dari perdebatan substantif. Fungsi <em>checks
-          and balances</em> lumpuh oleh koalisi mayoritas dan politik akomodasi. Parlemen formal yang seharusnya menjadi
-        benteng aspirasi justru kerap berubah menjadi stempel karet bagi penguasa. Akibatnya, regulasi dan kebijakan
-        lahir dengan tergesa-gesa, tanpa partisipasi publik yang bermakna.</p>
-      <p class="reveal"><strong>parlemenbayangan.id</strong> hadir sebagai inisiatif dari koalisi masyarakat sipil untuk
-        merebut kembali ruang deliberasi yang ditinggalkan tersebut. Kami hadir secara khusus untuk <strong>berperan
-          mengawasi dan menguji gagasan dari Kabinet Bayangan</strong>.
-        Kami memastikan bahwa setiap alternatif kebijakan yang dirumuskan oleh Kabinet Bayangan telah melewati uji
-        publik yang
-        ketat, kritis, dan berbasis bukti (<em>evidence-based</em>).</p>
-      <p class="reveal">Melalui pembagian komisi yang merespons portofolio Kabinet Bayangan, Parlemen Bayangan akan
-        menggelar <em>Shadow Hearing</em>, mengevaluasi kebijakan alternatif yang diusulkan, dan memanggil para
-        ahli untuk memastikan kualitas gagasan. <strong>Ketika fungsi kontrol parlemen formal mandek, maka mendirikan
-          parlemen warga
-          adalah langkah krusial untuk menjaga akuntabilitas dan merawat nalar publik.</strong></p>
-      <p class="reveal">Ini bukan sekadar wadah penolakan, melainkan arena perdebatan alternatif yang beradab dan
-        mencerdaskan. <strong>Rakyat harus memegang palu sidangnya sendiri, mengawal lahirnya kebijakan alternatif, dan
-          mengambil kembali kendali atas arah masa depan republik ini.</strong></p>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- CTA / KRITERIA -->
-  <section class="cta-section" id="kriteria">
-    <div class="section-label reveal">Ajakan Terbuka</div>
-    <h2 class="reveal">Parlemen ini memanggil para perawat nalar dan <span class="highlight">penjaga republik.</span>
-    </h2>
-    <p class="cta-intro reveal">Gagasan dan kebijakan alternatif memerlukan pengawasan dan pengujian yang kritis. Kita
-      membutuhkan ruang di mana setiap argumen dibedah secara substantif, bukan sekadar diaminkan. Ini adalah undangan
-      terbuka bagi Anda—para pemikir tajam, pekerja keras, dan jiwa-jiwa tak terbeli—untuk mengambil peran dalam
-      mengawal Kabinet Bayangan. Kami tidak mencari pengikut buta, kami mencari penguji gagasan dan pelayan sejati nalar
-      publik.</p>
-
-    <div class="criteria-grid">
-      <!-- Item 01 -->
-      <div class="criteria-card-premium reveal">
-        <div class="card-bg-number">01</div>
-        <div class="icon-box">🛡️</div>
-        <div class="card-text-content">
-          <h3>Integritas Baja</h3>
-          <p>Tidak bisa dibeli, tidak bisa ditundukkan oleh intimidasi, bujukan oligarki, maupun godaan jabatan semu.
-          </p>
-        </div>
-        <div class="card-hover-border"></div>
-      </div>
-
-      <!-- Item 02 -->
-      <div class="criteria-card-premium reveal">
-        <div class="card-bg-number">02</div>
-        <div class="icon-box">⚡</div>
-        <div class="card-text-content">
-          <h3>Energi Pembaruan</h3>
-          <p>Membawa nyala perlawanan baru dan perspektif segar. Tidak tersandera oleh dosa dan beban masa lalu.</p>
-        </div>
-        <div class="card-hover-border"></div>
-      </div>
-
-      <!-- Item 03 -->
-      <div class="criteria-card-premium reveal">
-        <div class="card-bg-number">03</div>
-        <div class="icon-box">🧠</div>
-        <div class="card-text-content">
-          <h3>Ketajaman Analisis</h3>
-          <p>Memiliki pisau bedah keilmuan yang presisi. Berbicara dengan data, membantah dengan fakta yang tak
-            terbantahkan.</p>
-        </div>
-        <div class="card-hover-border"></div>
-      </div>
-
-      <!-- Item 04 -->
-      <div class="criteria-card-premium reveal">
-        <div class="card-bg-number">04</div>
-        <div class="icon-box">📜</div>
-        <div class="card-text-content">
-          <h3>Rekam Jejak Teruji</h3>
-          <p>Nama dan karyanya dihormati oleh publik dan gerakan sipil. Konsistensi perjuangannya tidak pernah
-            diragukan.</p>
-        </div>
-        <div class="card-hover-border"></div>
-      </div>
-
-      <!-- Item 05 -->
-      <div class="criteria-card-premium reveal">
-        <div class="card-bg-number">05</div>
-        <div class="icon-box">🔥</div>
-        <div class="card-text-content">
-          <h3>Keberanian Moral</h3>
-          <p>Berani berdiri sendirian demi kebenaran. Menolak diam dan bungkam saat hak serta nalar publik
-            diinjak-injak.</p>
-        </div>
-        <div class="card-hover-border"></div>
-      </div>
-
-      <!-- Item 06 -->
-      <div class="criteria-card-premium reveal">
-        <div class="card-bg-number">06</div>
-        <div class="icon-box">✊</div>
-        <div class="card-text-content">
-          <h3>Loyalitas Kerakyatan</h3>
-          <p>Mendedikasikan waktu, tenaga, dan pikiran mutlak murni untuk kepentingan orang banyak. Tanpa kompromi
-            sedikitpun.</p>
-        </div>
-        <div class="card-hover-border"></div>
-      </div>
-
-      <!-- Item 07 (Anchor) -->
-      <div class="criteria-card-premium reveal">
-        <div class="card-bg-number">07</div>
-        <div class="icon-box">⚖️</div>
-        <div class="card-text-content">
-          <h3>Independensi Mutlak</h3>
-          <p>Bebas 100% dari belenggu partai politik dan kepentingan kekuasaan. Hanya tunduk pada akal sehat konstitusi.
-          </p>
-        </div>
-        <div class="card-hover-border"></div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- REDESIGNED KOMISI (FORMASI) SECTION -->
-  <section class="formasi-section" id="komisi">
-    <div class="formasi-header-wrap">
-      <div class="section-label reveal">Komisi Parlemen</div>
-      <h2 class="reveal">Ramping, strategis, <span class="highlight">berbasis urgensi.</span></h2>
-      <p class="formasi-intro reveal">Formasi ini dirancang untuk mencakup isu-isu paling krusial. Setiap portofolio
-        dipilih berdasarkan urgensi nyata yang dirasakan rakyat dan ketersediaan kandidat yang kompeten untuk mengawal
-        kabinet bayangan di setiap lini.</p>
-    </div>
-
-    <div class="formasi-grid">
-
+  <section class="content-section">
+    <div style="display: flex; flex-direction: column; gap: 80px;">
+    
       <!-- Komisi I -->
-      <div class="formasi-card reveal">
-        <div class="formasi-num-watermark">I</div>
-        <div class="komisi-top-accent"></div>
-        <h3 class="komisi-title">Politik, Hukum, Pertahanan &amp; Diplomasi</h3>
-
-        <div class="komisi-details-group">
-          <div class="komisi-detail-box">
-            <div class="komisi-detail-label">Ruang Lingkup</div>
-            <div class="komisi-detail-text">Politik, hukum, pemerintahan, keamanan, pertahanan, hubungan luar negeri
+      <div class="reveal" style="position: relative; background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 64px 48px; overflow: hidden;">
+        <div style="position: absolute; right: -20px; bottom: -40px; font-family: 'Bebas Neue'; font-size: 20rem; color: var(--border); opacity: 0.2; line-height: 0.8; z-index: 0; pointer-events: none;">I</div>
+        <div style="position: relative; z-index: 1;">
+          <div style="width: 60px; height: 4px; background: var(--red); border-radius: 2px; margin-bottom: 24px;"></div>
+          <h2 style="font-size: 2.5rem; margin-bottom: 32px;">Politik, Hukum, Pertahanan &amp; Diplomasi</h2>
+          <div class="grid-2">
+            <div>
+              <h4 style="font-family: 'Outfit'; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 16px;">Ruang Lingkup</h4>
+              <p class="editorial-text">Fokus pada reformasi hukum, tata negara, pengawasan institusi pertahanan, serta arah diplomasi Indonesia di kancah global. Memastikan tidak ada perundangan yang diselundupkan untuk kepentingan oligarki.</p>
+              
+              <h4 style="font-family: 'Outfit'; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-top: 32px; margin-bottom: 16px;">Mandat Utama</h4>
+              <ul class="editorial-text" style="padding-left: 20px;">
+                <li>Eksaminasi produk legislasi bermasalah</li>
+                <li>Pengawasan anggaran pertahanan & Alutsista</li>
+                <li>Perlindungan HAM & Anti-Korupsi</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style="font-family: 'Outfit'; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 16px;">Anggota Komisi</h4>
+              <div style="background: var(--bg-soft); padding: 24px; border-radius: 16px;">
+                <p class="editorial-text" style="margin-bottom: 12px;"><strong>Feri Amsari</strong> <span style="font-size: 0.8rem; padding: 4px 8px; background: var(--red-subtle); color: var(--red); border-radius: 100px; margin-left: 8px;">Koordinator</span></p>
+                <p class="editorial-text" style="margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 12px;">Pakar Hukum Tata Negara, Akademisi Universitas Andalas</p>
+                <p class="editorial-text"><strong>Shofwan Al Banna</strong> — Hubungan Internasional</p>
+                <p class="editorial-text"><strong>Arman Suparman</strong> — Pemantau Peradilan</p>
+                <p class="editorial-text"><strong>Yance Arizona</strong> — Hukum Adat & Agraria</p>
+                <p class="editorial-text"><strong>Curie Maharani</strong> — Analis Pertahanan</p>
+              </div>
             </div>
           </div>
-          <div class="komisi-detail-box">
-            <div class="komisi-detail-label">Tokoh Pengawal</div>
-            <div class="komisi-detail-text"><strong>Feri Amsari (Koordinator)</strong>, Shofwan Al Banna, Arman
-              Suparman, Yance Arizona, Curie Maharani</div>
-          </div>
         </div>
       </div>
-
+      
       <!-- Komisi II -->
-      <div class="formasi-card reveal">
-        <div class="formasi-num-watermark">II</div>
-        <div class="komisi-top-accent"></div>
-        <h3 class="komisi-title">Ekonomi, Keuangan &amp; Tata Kelola</h3>
-
-        <div class="komisi-details-group">
-          <div class="komisi-detail-box">
-            <div class="komisi-detail-label">Ruang Lingkup</div>
-            <div class="komisi-detail-text">Perekonomian, APBN, investasi, tata kelola negara, reformasi birokrasi</div>
-          </div>
-          <div class="komisi-detail-box">
-            <div class="komisi-detail-label">Tokoh Pengawal</div>
-            <div class="komisi-detail-text"><strong>Bhima Yudhistira (Koordinator)</strong>, Media Wahyudi</div>
+      <div class="reveal" style="position: relative; background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 64px 48px; overflow: hidden;">
+        <div style="position: absolute; right: -20px; bottom: -40px; font-family: 'Bebas Neue'; font-size: 20rem; color: var(--border); opacity: 0.2; line-height: 0.8; z-index: 0; pointer-events: none;">II</div>
+        <div style="position: relative; z-index: 1;">
+          <div style="width: 60px; height: 4px; background: var(--red); border-radius: 2px; margin-bottom: 24px;"></div>
+          <h2 style="font-size: 2.5rem; margin-bottom: 32px;">Ekonomi, Keuangan &amp; Tata Kelola</h2>
+          <div class="grid-2">
+            <div>
+              <h4 style="font-family: 'Outfit'; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 16px;">Ruang Lingkup</h4>
+              <p class="editorial-text">Mengawasi stabilitas makroekonomi, keadilan fiskal, penyusunan APBN, investasi, dan tata kelola BUMN. Memastikan pembangunan ekonomi berdampak langsung pada kesejahteraan rakyat, bukan segelintir elit.</p>
+            </div>
+            <div>
+              <h4 style="font-family: 'Outfit'; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 16px;">Anggota Komisi</h4>
+              <div style="background: var(--bg-soft); padding: 24px; border-radius: 16px;">
+                <p class="editorial-text" style="margin-bottom: 12px;"><strong>Bhima Yudhistira</strong> <span style="font-size: 0.8rem; padding: 4px 8px; background: var(--red-subtle); color: var(--red); border-radius: 100px; margin-left: 8px;">Koordinator</span></p>
+                <p class="editorial-text" style="margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 12px;">Ekonom, Direktur CELIOS</p>
+                <p class="editorial-text"><strong>Media Wahyudi</strong> — Pakar Keuangan Publik</p>
+                <p class="editorial-text" style="color: var(--text-muted); font-style: italic; margin-top: 12px;">*Kursi anggota masih dalam tahap penjaringan</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
+      
       <!-- Komisi III -->
-      <div class="formasi-card reveal">
-        <div class="formasi-num-watermark">III</div>
-        <div class="komisi-top-accent"></div>
-        <h3 class="komisi-title">Pembangunan Manusia</h3>
-
-        <div class="komisi-details-group">
-          <div class="komisi-detail-box">
-            <div class="komisi-detail-label">Ruang Lingkup</div>
-            <div class="komisi-detail-text">Pendidikan, kesehatan, perlindungan perempuan, kelompok rentan, layanan
-              sosial</div>
-          </div>
-          <div class="komisi-detail-box">
-            <div class="komisi-detail-label">Tokoh Pengawal</div>
-            <div class="komisi-detail-text"><strong>Irma Hidayana (Koordinator)</strong>, Iman Zanatul H., Nabiyla Risfa
-              I., Khoirunnisa N.</div>
+      <div class="reveal" style="position: relative; background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 64px 48px; overflow: hidden;">
+        <div style="position: absolute; right: -20px; bottom: -40px; font-family: 'Bebas Neue'; font-size: 20rem; color: var(--border); opacity: 0.2; line-height: 0.8; z-index: 0; pointer-events: none;">III</div>
+        <div style="position: relative; z-index: 1;">
+          <div style="width: 60px; height: 4px; background: var(--red); border-radius: 2px; margin-bottom: 24px;"></div>
+          <h2 style="font-size: 2.5rem; margin-bottom: 32px;">Pembangunan Manusia</h2>
+          <div class="grid-2">
+            <div>
+              <h4 style="font-family: 'Outfit'; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 16px;">Ruang Lingkup</h4>
+              <p class="editorial-text">Berpusat pada peningkatan kualitas hidup melalui kebijakan pendidikan, jaminan kesehatan, perlindungan perempuan dan anak, serta penguatan kelompok rentan dan layanan sosial.</p>
+            </div>
+            <div>
+              <h4 style="font-family: 'Outfit'; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 16px;">Anggota Komisi</h4>
+              <div style="background: var(--bg-soft); padding: 24px; border-radius: 16px;">
+                <p class="editorial-text" style="margin-bottom: 12px;"><strong>Irma Hidayana</strong> <span style="font-size: 0.8rem; padding: 4px 8px; background: var(--red-subtle); color: var(--red); border-radius: 100px; margin-left: 8px;">Koordinator</span></p>
+                <p class="editorial-text" style="margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 12px;">Pakar Kesehatan Masyarakat, Inisiator LaporCovid-19</p>
+                <p class="editorial-text"><strong>Iman Zanatul H.</strong> — Kebijakan Pendidikan</p>
+                <p class="editorial-text"><strong>Nabiyla Risfa I.</strong> — Hak Kelompok Rentan</p>
+                <p class="editorial-text"><strong>Khoirunnisa N.</strong> — Perlindungan Perempuan</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
+      
       <!-- Komisi IV -->
-      <div class="formasi-card reveal">
-        <div class="formasi-num-watermark">IV</div>
-        <div class="komisi-top-accent"></div>
-        <h3 class="komisi-title">Ketahanan Pangan, Lingkungan &amp; Transformasi Digital</h3>
-
-        <div class="komisi-details-group">
-          <div class="komisi-detail-box">
-            <div class="komisi-detail-label">Ruang Lingkup</div>
-            <div class="komisi-detail-text">Pertanian, pangan, lingkungan hidup, perubahan iklim, riset, teknologi,
-              digital</div>
-          </div>
-          <div class="komisi-detail-box">
-            <div class="komisi-detail-label">Tokoh Pengawal</div>
-            <div class="komisi-detail-text"><strong>Iqbal Damanik (Koordinator)</strong>, Isnawati Hidayah, Nenden Sekar
-              A.</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Komisi V (Full Width Anchor) -->
-      <div class="formasi-card reveal">
-        <div class="formasi-num-watermark">V</div>
-        <div class="komisi-top-accent"></div>
-        <h3 class="komisi-title">Sekretariat, Strategi &amp; Monitoring Kebijakan</h3>
-
-        <div class="komisi-details-group" style="flex-direction: row; flex-wrap: wrap; gap: 24px;">
-          <div class="komisi-detail-box" style="flex: 1; min-width: 250px;">
-            <div class="komisi-detail-label">Ruang Lingkup Utama</div>
-            <div class="komisi-detail-text">Sinkronisasi lintas komisi, monitoring, evaluasi, komunikasi publik,
-              penyusunan rekomendasi</div>
-          </div>
-          <div class="komisi-detail-box" style="flex: 1; min-width: 250px;">
-            <div class="komisi-detail-label">Penanggung Jawab</div>
-            <div class="komisi-detail-text"><strong>Ahmad Jilul Q. F. (Sekretaris Kabinet)</strong></div>
+      <div class="reveal" style="position: relative; background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 64px 48px; overflow: hidden;">
+        <div style="position: absolute; right: -20px; bottom: -40px; font-family: 'Bebas Neue'; font-size: 20rem; color: var(--border); opacity: 0.2; line-height: 0.8; z-index: 0; pointer-events: none;">IV</div>
+        <div style="position: relative; z-index: 1;">
+          <div style="width: 60px; height: 4px; background: var(--red); border-radius: 2px; margin-bottom: 24px;"></div>
+          <h2 style="font-size: 2.5rem; margin-bottom: 32px;">Ketahanan Pangan, Lingkungan &amp; Transformasi Digital</h2>
+          <div class="grid-2">
+            <div>
+              <h4 style="font-family: 'Outfit'; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 16px;">Ruang Lingkup</h4>
+              <p class="editorial-text">Mengawasi transisi energi berkeadilan, kedaulatan pangan, mitigasi krisis iklim, serta kebijakan transformasi digital yang melindungi hak privasi warga.</p>
+            </div>
+            <div>
+              <h4 style="font-family: 'Outfit'; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 16px;">Anggota Komisi</h4>
+              <div style="background: var(--bg-soft); padding: 24px; border-radius: 16px;">
+                <p class="editorial-text" style="margin-bottom: 12px;"><strong>Iqbal Damanik</strong> <span style="font-size: 0.8rem; padding: 4px 8px; background: var(--red-subtle); color: var(--red); border-radius: 100px; margin-left: 8px;">Koordinator</span></p>
+                <p class="editorial-text" style="margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 12px;">Aktivis Lingkungan & Iklim Greenpeace</p>
+                <p class="editorial-text"><strong>Isnawati Hidayah</strong> — Analis Transisi Energi</p>
+                <p class="editorial-text"><strong>Nenden Sekar A.</strong> — Hak Digital (SAFEnet)</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
+      
+      <!-- Komisi V -->
+      <div class="reveal" style="position: relative; background: var(--red); color: white; border-radius: 24px; padding: 64px 48px; overflow: hidden; box-shadow: 0 20px 40px rgba(220,38,38,0.2);">
+        <div style="position: absolute; right: -20px; bottom: -40px; font-family: 'Bebas Neue'; font-size: 20rem; color: white; opacity: 0.1; line-height: 0.8; z-index: 0; pointer-events: none;">V</div>
+        <div style="position: relative; z-index: 1;">
+          <div style="width: 60px; height: 4px; background: white; border-radius: 2px; margin-bottom: 24px;"></div>
+          <h2 style="font-size: 2.5rem; margin-bottom: 32px; color: white;">Sekretariat, Strategi &amp; Monitoring Kebijakan</h2>
+          <div class="grid-2">
+            <div>
+              <h4 style="font-family: 'Outfit'; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.7); margin-bottom: 16px;">Fungsi Komando</h4>
+              <p class="editorial-text" style="color: white;">Komisi ini bertindak sebagai jantung operasional Parlemen Bayangan. Mensinkronkan temuan lintas komisi, mengatur strategi komunikasi publik, dan mendistribusikan <em>Policy Paper</em> kepada masyarakat dan pengambil kebijakan.</p>
+            </div>
+            <div>
+              <h4 style="font-family: 'Outfit'; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.7); margin-bottom: 16px;">Penanggung Jawab</h4>
+              <div style="background: rgba(0,0,0,0.15); padding: 24px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.2);">
+                <p class="editorial-text" style="color: white; font-size: 1.25rem;"><strong>Ahmad Jilul Q. F.</strong></p>
+                <p class="editorial-text" style="color: rgba(255,255,255,0.8);">Sekretaris Kabinet / Direktur Eksekutif</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- PANEL SELEKSI -->
-  <section class="panel-section" id="panel">
-    <div class="section-label reveal">Panel Seleksi</div>
-    <h2 class="reveal">Mereka yang <span class="highlight">menilai.</span></h2>
-    <p class="panel-intro reveal">Seleksi formasi parlemen dilakukan oleh panel independen yang kredibilitasnya tidak
-      perlu dipertanyakan. Mereka bukan politisi — mereka adalah profesional dengan rekam jejak nyata di bidang hukum,
-      ekonomi, dan tata kelola pemerintahan.</p>
-
-    <div class="panel-grid">
-      <div class="panel-card reveal">
-        <img class="panel-photo" src="https://placehold.co/120x120/DC2626/FFFFFF?text=ZA"
-          alt="Prof. Dr. Zainal Arifin Mochtar">
-        <h3>Prof. Dr. Zainal Arifin Mochtar, S.H., LL.M.</h3>
-        <div class="panel-roles">
-          <span class="panel-role">Guru Besar Hukum Kelembagaan Negara — FH UGM</span>
-          <span class="panel-role">Penulis Buku Kronik Otoritarianisme Indonesia</span>
-        </div>
-      </div>
-
-      <div class="panel-card reveal">
-        <img class="panel-photo" src="https://placehold.co/120x120/DC2626/FFFFFF?text=BS" alt="Bivitri Susanti">
-        <h3>Bivitri Susanti</h3>
-        <div class="panel-roles">
-          <span class="panel-role">Pendiri Pusat Studi Hukum dan Kebijakan</span>
-          <span class="panel-role">Pengajar Jentera Law School</span>
-        </div>
-      </div>
-
-      <div class="panel-card reveal">
-        <img class="panel-photo" src="https://placehold.co/120x120/DC2626/FFFFFF?text=ER"
-          alt="Erry Riyana Hardjapamekas">
-        <h3>Erry Riyana Hardjapamekas</h3>
-        <div class="panel-roles">
-          <span class="panel-role">Wakil Ketua KPK 2003–2007</span>
-          <span class="panel-role">Ketua Koalisi Anti Korupsi Indonesia</span>
-          <span class="panel-role">Pendiri Masyarakat Transparansi Indonesia</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- FAQ -->
-  <section class="faq-section" id="faq">
-    <div class="section-label reveal">Pertanyaan Umum</div>
-    <h2 class="reveal">Mendedah keraguan, <span class="highlight">menjawab pertanyaan.</span></h2>
-
-    <div class="faq-list">
-      <!-- Item 1 -->
-      <div class="faq-item reveal">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span class="faq-num">01</span>
-          <span class="faq-text">Apa itu parlemenbayangan.id?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            Sebuah platform independen masyarakat sipil yang berfungsi khusus untuk mengawasi <em>Kabinet Bayangan</em>.
-            Kami hadir untuk membedah, menguji, dan memastikan kualitas dari setiap alternatif kebijakan publik yang
-            ditawarkan. Platform ini
-            berfungsi sebagai wadah kolaborasi lintas elemen: akademisi, aktivis, teknokrat, jurnalis, hingga organisasi
-            masyarakat.
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 2 -->
-      <div class="faq-item reveal">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span class="faq-num">02</span>
-          <span class="faq-text">Kenapa Indonesia butuh institusi "bayangan" ini?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            Fungsi pengawasan parlemen formal seringkali tumpul akibat dominasi koalisi mayoritas. Ketika sistem
-            <em>checks and balances</em> lumpuh dan gedung wakil rakyat sekadar menjadi stempel karet, masyarakat sipil
-            harus mengambil inisiatif untuk mengisi kekosongan ruang deliberasi tersebut demi merawat nalar publik.
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 3 -->
-      <div class="faq-item reveal">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span class="faq-num">03</span>
-          <span class="faq-text">Apakah gerakan ini berafiliasi dengan partai oposisi?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            <strong>Sama sekali tidak.</strong> Independensi adalah ruh dari gerakan ini. Parlemen Bayangan tidak
-            terafiliasi, tidak didanai, dan tidak bekerja untuk partai politik mana pun. Kami berpihak 100% pada akal
-            sehat konstitusi dan kepentingan masyarakat luas.
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 4 -->
-      <div class="faq-item reveal">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span class="faq-num">04</span>
-          <span class="faq-text">Bagaimana cara kerja Parlemen Bayangan?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            Berbeda dengan LSM yang fokus pada isu tunggal, kami mengadopsi struktur komisi. Kami akan:
-            <ul class="faq-bullets">
-              <li>Menyelenggarakan <em>Shadow Hearing</em> (Sidang Terbuka Rakyat) yang mengundang pakar dan warga
-                terdampak.</li>
-              <li>Membedah kelemahan RUU/Kebijakan dan merilis Kertas Kebijakan Alternatif (<em>Policy Paper</em>).</li>
-              <li>Mengaudit janji kampanye dan mengawasi langsung gagasan-gagasan yang ditawarkan oleh Kabinet Bayangan.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 5 -->
-      <div class="faq-item reveal">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span class="faq-num">05</span>
-          <span class="faq-text">Siapa yang berada di balik inisiatif ini?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            Inisiatif ini lahir dari simpul-simpul masyarakat sipil. Saat ini, kepanitiaan awal dikawal oleh tokoh-tokoh
-            kredibel seperti <strong>Feri Amsari</strong> (Pakar Hukum Tata Negara) dan <strong>Ahmad Jilul
-              Q.F.</strong>, dan terus diperluas dengan melibatkan ahli di bidang ekonomi, lingkungan, dan teknologi.
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 6 -->
-      <div class="faq-item reveal">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span class="faq-num">06</span>
-          <span class="faq-text">Apakah anggota komisi menerima bayaran finansial?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            <strong>Tidak ada insentif finansial.</strong> Seluruh posisi di Parlemen Bayangan bersifat <em>pro
-              bono</em> (sukarela). Anggotanya adalah para profesional dengan karir utamanya masing-masing. Di situlah
-            letak kekuatan gerakan ini: independen, tidak terikat transaksi, dan tidak bisa dibeli.
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 7 -->
-      <div class="faq-item reveal">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span class="faq-num">07</span>
-          <span class="faq-text">Bagaimana masyarakat umum bisa terlibat?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            Suara Anda adalah amunisi kami. Anda bisa berpartisipasi dengan: memberikan rekomendasi tokoh kredibel untuk
-            masuk ke dalam komisi, mengirimkan data kejanggalan kebijakan di lapangan, atau ikut berdebat secara
-            konstruktif dalam sesi <em>Shadow Hearing</em> publik kami.
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- REGISTRATION -->
-  <section class="register-section" id="gabung">
-    <div class="section-label reveal">Registrasi &amp; Rekomendasi</div>
-    <h2 class="reveal" style="margin-bottom:16px;">Anda punya nama kandidat atau ingin terjun langsung?</h2>
-    <br>
-    <div class="register-grid">
-      <div class="register-card reveal">
-        <div class="card-number">01</div>
-        <h3>Rekomendasikan Tokoh</h3>
-        <p>Punya kandidat yang Anda rasa cocok menjadi anggota "Komisi" parlemen ini? Kirimkan rekomendasi Anda.</p>
-        <a href="https://forms.gle/4gugKXK7ShDKzQqE7" target="_blank" class="btn-primary">Isi Form Rekomendasi →</a>
-      </div>
-      <div class="register-card reveal">
-        <div class="card-number">02</div>
-        <h3>Jadilah Bagian dari Kami</h3>
-        <p>Jika Anda merasa terpanggil dan memiliki kompetensi yang kami cari, kirimkan lamaran dan profil singkat Anda.
-        </p>
-        <a href="mailto:panitia@parlemenbayangan.id" class="btn-outline">📧 panitia@parlemenbayangan.id</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CLOSING -->
-  <section class="closing">
-    <p class="reveal">Saatnya nalar publik punya <span>taji</span>.<br>Mari menguji kebijakan dengan <span>bukti</span>.
-    </p>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
+<footer>
     <p>© 2026 <a href="#">parlemenbayangan.id</a> — Inisiatif Masyarakat Sipil Indonesia</p>
   </footer>
 
-  <!-- SCRIPTS -->
+  
+<!-- SCRIPTS -->
   <script>
     // Scroll reveal logic
     const observer = new IntersectionObserver((entries) => {
