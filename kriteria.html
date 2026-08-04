@@ -24,6 +24,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
   <link rel="manifest" href="./assets/favicon/site.webmanifest">
   <link rel="shortcut icon" href="./assets/favicon/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -488,6 +489,7 @@
       margin-bottom: 24px;
       position: relative;
       transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      color: var(--red-bright);
     }
 
     .criteria-card-premium:hover .icon-box {
@@ -495,6 +497,7 @@
       border-color: var(--red-bright);
       box-shadow: 0 10px 24px rgba(220, 38, 38, 0.5), inset 0 0 12px rgba(255, 255, 255, 0.3);
       transform: scale(1.15) rotate(-8deg);
+      color: #ffffff;
     }
 
     .card-text-content {
@@ -1491,7 +1494,7 @@
     <div class="criteria-grid" style="display: flex; flex-direction: column; gap: 32px;">
       <!-- Criteria 1 -->
       <div class="light-card reveal" style="display: flex; gap: 32px; align-items: flex-start;">
-        <div class="icon-box" style="background: var(--bg-soft); color: var(--text-primary); border-color: var(--border); flex-shrink: 0; box-shadow: none;">🔍</div>
+        <div class="icon-box" style="background: var(--bg-soft); color: var(--text-primary); border-color: var(--border); flex-shrink: 0; box-shadow: none;"><i class="fa-solid fa-magnifying-glass"></i></div>
         <div>
           <h3 style="font-family: 'Outfit'; font-size: 1.8rem; margin-bottom: 16px;">1. Kritis</h3>
           <p class="editorial-text">Tidak menerima gagasan begitu saja. Terbiasa mempertanyakan asumsi, kepentingan, dan konsekuensi di balik setiap kebijakan.</p>
@@ -1500,7 +1503,7 @@
       
       <!-- Criteria 2 -->
       <div class="light-card reveal" style="display: flex; gap: 32px; align-items: flex-start;">
-        <div class="icon-box" style="background: var(--bg-soft); color: var(--text-primary); border-color: var(--border); flex-shrink: 0; box-shadow: none;">🧠</div>
+        <div class="icon-box" style="background: var(--bg-soft); color: var(--text-primary); border-color: var(--border); flex-shrink: 0; box-shadow: none;"><i class="fa-solid fa-brain"></i></div>
         <div>
           <h3 style="font-family: 'Outfit'; font-size: 1.8rem; margin-bottom: 16px;">2. Analitis</h3>
           <p class="editorial-text">Mampu mengurai persoalan yang kompleks, menemukan akar masalah, serta melihat hubungan antara kebijakan dan dampaknya bagi masyarakat.</p>
@@ -1509,7 +1512,7 @@
       
       <!-- Criteria 3 -->
       <div class="light-card reveal" style="display: flex; gap: 32px; align-items: flex-start;">
-        <div class="icon-box" style="background: var(--bg-soft); color: var(--text-primary); border-color: var(--border); flex-shrink: 0; box-shadow: none;">🎯</div>
+        <div class="icon-box" style="background: var(--bg-soft); color: var(--text-primary); border-color: var(--border); flex-shrink: 0; box-shadow: none;"><i class="fa-solid fa-bullseye"></i></div>
         <div>
           <h3 style="font-family: 'Outfit'; font-size: 1.8rem; margin-bottom: 16px;">3. Substantif</h3>
           <p class="editorial-text">Tidak berhenti pada slogan, sentimen, atau serangan personal. Kritik diarahkan pada isi gagasan, kualitas argumentasi, dan kelayakan solusi.</p>
@@ -1518,7 +1521,7 @@
       
       <!-- Criteria 4 -->
       <div class="light-card reveal" style="display: flex; gap: 32px; align-items: flex-start;">
-        <div class="icon-box" style="background: var(--bg-soft); color: var(--text-primary); border-color: var(--border); flex-shrink: 0; box-shadow: none;">📊</div>
+        <div class="icon-box" style="background: var(--bg-soft); color: var(--text-primary); border-color: var(--border); flex-shrink: 0; box-shadow: none;"><i class="fa-solid fa-chart-column"></i></div>
         <div>
           <h3 style="font-family: 'Outfit'; font-size: 1.8rem; margin-bottom: 16px;">4. Berbasis Bukti</h3>
           <p class="editorial-text">Menggunakan data, riset, pengalaman lapangan, dan sumber yang dapat diverifikasi sebagai dasar dalam menyusun kritik.</p>
@@ -1527,7 +1530,7 @@
       
       <!-- Criteria 5 -->
       <div class="light-card reveal" style="display: flex; gap: 32px; align-items: flex-start;">
-        <div class="icon-box" style="background: var(--bg-soft); color: var(--text-primary); border-color: var(--border); flex-shrink: 0; box-shadow: none;">🗣️</div>
+        <div class="icon-box" style="background: var(--bg-soft); color: var(--text-primary); border-color: var(--border); flex-shrink: 0; box-shadow: none;"><i class="fa-solid fa-comments"></i></div>
         <div>
           <h3 style="font-family: 'Outfit'; font-size: 1.8rem; margin-bottom: 16px;">5. Mampu Berargumentasi</h3>
           <p class="editorial-text">Dapat menyampaikan pendapat secara runtut, mempertahankan gagasan secara rasional, serta terbuka terhadap bantahan dan koreksi.</p>
@@ -1536,7 +1539,7 @@
       
       <!-- Criteria 6 -->
       <div class="light-card reveal" style="display: flex; gap: 32px; align-items: flex-start;">
-        <div class="icon-box" style="background: var(--bg-soft); color: var(--text-primary); border-color: var(--border); flex-shrink: 0; box-shadow: none;">🔄</div>
+        <div class="icon-box" style="background: var(--bg-soft); color: var(--text-primary); border-color: var(--border); flex-shrink: 0; box-shadow: none;"><i class="fa-solid fa-arrows-rotate"></i></div>
         <div>
           <h3 style="font-family: 'Outfit'; font-size: 1.8rem; margin-bottom: 16px;">6. Memiliki Perspektif Tanding</h3>
           <p class="editorial-text">Mampu melihat persoalan dari sudut pandang berbeda dan menawarkan alternatif, bukan sekadar menunjukkan apa yang salah.</p>
@@ -1545,7 +1548,7 @@
       
       <!-- Criteria 7 -->
       <div class="light-card reveal" style="display: flex; gap: 32px; align-items: flex-start;">
-        <div class="icon-box" style="background: var(--bg-soft); color: var(--text-primary); border-color: var(--border); flex-shrink: 0; box-shadow: none;">🛡️</div>
+        <div class="icon-box" style="background: var(--bg-soft); color: var(--text-primary); border-color: var(--border); flex-shrink: 0; box-shadow: none;"><i class="fa-solid fa-shield-halved"></i></div>
         <div>
           <h3 style="font-family: 'Outfit'; font-size: 1.8rem; margin-bottom: 16px;">7. Independen</h3>
           <p class="editorial-text">Tidak terikat pada kepentingan politik tertentu dan mampu menjaga penilaian tetap objektif, bahkan ketika pendapatnya tidak populer.</p>
@@ -1554,7 +1557,7 @@
 
       <!-- Criteria 8 -->
       <div class="light-card reveal" style="display: flex; gap: 32px; align-items: flex-start; border-color: var(--red); background: var(--red-subtle);">
-        <div class="icon-box" style="background: var(--red); color: white; border-color: var(--red-bright); flex-shrink: 0;">⚖️</div>
+        <div class="icon-box" style="background: var(--red); color: white; border-color: var(--red-bright); flex-shrink: 0;"><i class="fa-solid fa-scale-balanced"></i></div>
         <div>
           <h3 style="font-family: 'Outfit'; font-size: 1.8rem; margin-bottom: 16px; color: var(--red);">8. Terbuka untuk Diperdebatkan</h3>
           <p class="editorial-text" style="color: var(--text-primary);">Siap menguji gagasan orang lain sekaligus bersedia melihat gagasannya sendiri diuji. Karena kritik yang sehat, tragisnya, memang harus berlaku dua arah.</p>
