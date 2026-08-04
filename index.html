@@ -343,55 +343,13 @@
 
     .criteria-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 28px;
     }
 
-    /* Span kartu ke-7 menjadi anchor card di bagian bawah */
-    @media (min-width: 1024px) {
-      .criteria-card-premium:nth-child(7) {
-        grid-column: 1 / -1;
-        display: flex;
-        align-items: center;
-        gap: 40px;
-        padding: 48px 64px;
-      }
-
-      .criteria-card-premium:nth-child(7) .icon-box {
-        margin-bottom: 0;
-        width: 80px;
-        height: 80px;
-        font-size: 2.5rem;
-        flex-shrink: 0;
-      }
-
-      .criteria-card-premium:nth-child(7) .card-text-content {
-        flex: 1;
-      }
-
-      .criteria-card-premium:nth-child(7) h3 {
-        font-size: 2rem;
-        margin-bottom: 12px;
-      }
-
-      .criteria-card-premium:nth-child(7) p {
-        font-size: 1.2rem;
-      }
-
-      .criteria-card-premium:nth-child(7) .card-bg-number {
-        font-size: 18rem;
-        right: 50px;
-        bottom: -60px;
-      }
-    }
-
-    @media (max-width: 1023px) {
+    @media (max-width: 1200px) {
       .criteria-grid {
         grid-template-columns: repeat(2, 1fr);
-      }
-
-      .criteria-card-premium:nth-child(7) {
-        grid-column: 1 / -1;
       }
     }
 
@@ -604,12 +562,29 @@
     .formasi-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
+      gap: 24px;
     }
 
-    /* Span the last card (Komisi V) to anchor the bottom elegantly */
-    .formasi-grid>.formasi-card:nth-child(5) {
+    @media (max-width: 768px) {
+      .formasi-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Span 15th card (Juru Bicara) to anchor the bottom elegantly */
+    .formasi-grid > .formasi-card:nth-child(15) {
       grid-column: 1 / -1;
+      background: linear-gradient(135deg, #111111, #1a0505);
+      border-color: rgba(220, 38, 38, 0.4);
+    }
+
+    .formasi-grid > .formasi-card:nth-child(15) .komisi-title {
+      color: #ffffff;
+    }
+
+    .formasi-grid > .formasi-card:nth-child(15) .formasi-num-watermark {
+      color: rgba(220, 38, 38, 0.2);
+      opacity: 1;
     }
 
     .formasi-card {
@@ -1368,7 +1343,7 @@
     <div class="hero-logo-wrap">
       <img src="./assets/logo/logo-screen-transparent.png" alt="Logo Parlemen Bayangan" class="hero-logo-img">
     </div>
-    <h1 class="hero-tagline">mengawal kabinet bayangan, menguji gagasan</h1>
+    <h1 class="hero-tagline">Sudah Saatnya Setiap Gagasan Diuji, Bukan Sekadar Dipercaya.</h1>
     <div class="scroll-hint">
       <span>scroll</span>
       <div class="scroll-line"></div>
@@ -1378,27 +1353,14 @@
   <!-- MANIFESTO -->
   <section class="manifesto" id="manifesto">
     <div class="section-label reveal">Manifesto</div>
-    <h2 class="reveal">Mengawal Kabinet Bayangan, memastikan setiap kebijakan <span class="highlight">teruji.</span>
+    <h2 class="reveal">Sudah Saatnya Setiap Gagasan Diuji, <span class="highlight">Bukan Sekadar Dipercaya.</span>
     </h2>
     <div class="manifesto-text">
-      <p class="reveal">Hari ini, gedung wakil rakyat lebih sering sunyi dari perdebatan substantif. Fungsi <em>checks
-          and balances</em> lumpuh oleh koalisi mayoritas dan politik akomodasi. Parlemen formal yang seharusnya menjadi
-        benteng aspirasi justru kerap berubah menjadi stempel karet bagi penguasa. Akibatnya, regulasi dan kebijakan
-        lahir dengan tergesa-gesa, tanpa partisipasi publik yang bermakna.</p>
-      <p class="reveal"><strong>parlemenbayangan.id</strong> hadir sebagai inisiatif dari koalisi masyarakat sipil untuk
-        merebut kembali ruang deliberasi yang ditinggalkan tersebut. Kami hadir secara khusus untuk <strong>berperan
-          mengawasi dan menguji gagasan dari Kabinet Bayangan</strong>.
-        Kami memastikan bahwa setiap alternatif kebijakan yang dirumuskan oleh Kabinet Bayangan telah melewati uji
-        publik yang
-        ketat, kritis, dan berbasis bukti (<em>evidence-based</em>).</p>
-      <p class="reveal">Melalui pembagian komisi yang merespons portofolio Kabinet Bayangan, Parlemen Bayangan akan
-        menggelar <em>Shadow Hearing</em>, mengevaluasi kebijakan alternatif yang diusulkan, dan memanggil para
-        ahli untuk memastikan kualitas gagasan. <strong>Ketika fungsi kontrol parlemen formal mandek, maka mendirikan
-          parlemen warga
-          adalah langkah krusial untuk menjaga akuntabilitas dan merawat nalar publik.</strong></p>
-      <p class="reveal">Ini bukan sekadar wadah penolakan, melainkan arena perdebatan alternatif yang beradab dan
-        mencerdaskan. <strong>Rakyat harus memegang palu sidangnya sendiri, mengawal lahirnya kebijakan alternatif, dan
-          mengambil kembali kendali atas arah masa depan republik ini.</strong></p>
+      <p class="reveal">Hari ini, ruang kritik terhadap gagasan kebijakan masih sering berjalan tanpa struktur yang jelas. Kita disuguhi berbagai janji dan alternatif solusi, tetapi publik tidak selalu memiliki ruang untuk menguji: apakah gagasan tersebut benar-benar masuk akal, berbasis data, dan mampu menjawab persoalan nyata? Akibatnya, kebijakan dan narasi publik mudah dibentuk oleh opini, bukan oleh perdebatan yang substantif.</p>
+      <p class="reveal"><strong>parlemenbayangan.id</strong> hadir sebagai formulasi baru koalisi masyarakat sipil untuk mengisi ruang tersebut. Kami hadir untuk menguji dan mengkritisi setiap gagasan kebijakan secara serius—bukan berdasarkan sentimen, melainkan melalui kritik yang tajam, narasi tanding, dan kajian yang berbasis bukti (<em>evidence-based</em>).</p>
+      <p class="reveal">Dalam sistem parlementer, parlemen memiliki fungsi penting sebagai ruang pengawasan dan kontrol terhadap pemerintah. Prinsip yang sama perlu dihadirkan dalam ruang politik alternatif, di mana setiap gagasan dan rancangan kebijakan harus memiliki ruang untuk diuji secara kritis, diperdebatkan secara terbuka, dan ditantang dari berbagai perspektif. Di sinilah Parlemen Bayangan mengambil peran: memastikan tidak ada gagasan yang lolos tanpa pengujian dan tidak ada kebijakan alternatif yang diterima begitu saja.</p>
+      <p class="reveal">Kami ingin setiap gagasan memiliki <em>sparring partner</em> yang sepadan agar tidak lahir tanpa kritik dan setiap kebijakan alternatif tidak diterima begitu saja. Kami ingin publik teredukasi untuk berani mempertanyakan kebijakan, memahami konsekuensinya, dan terlibat dalam perdebatan yang lebih substantif.</p>
+      <p class="reveal"><strong>Rakyat tidak boleh hanya menjadi penonton. Rakyat berhak menguji setiap gagasan, mempertanyakan setiap kebijakan, dan menentukan sendiri mana yang layak diperjuangkan.</strong></p>
     </div>
   </section>
 
@@ -1406,24 +1368,19 @@
 
   <!-- CTA / KRITERIA -->
   <section class="cta-section" id="kriteria">
-    <div class="section-label reveal">Ajakan Terbuka</div>
-    <h2 class="reveal">Parlemen ini memanggil para perawat nalar dan <span class="highlight">penjaga republik.</span>
+    <div class="section-label reveal">Kriteria Anggota</div>
+    <h2 class="reveal">Kami Mencari Mereka Yang <span class="highlight">Tidak Mudah Percaya.</span>
     </h2>
-    <p class="cta-intro reveal">Gagasan dan kebijakan alternatif memerlukan pengawasan dan pengujian yang kritis. Kita
-      membutuhkan ruang di mana setiap argumen dibedah secara substantif, bukan sekadar diaminkan. Ini adalah undangan
-      terbuka bagi Anda—para pemikir tajam, pekerja keras, dan jiwa-jiwa tak terbeli—untuk mengambil peran dalam
-      mengawal Kabinet Bayangan. Kami tidak mencari pengikut buta, kami mencari penguji gagasan dan pelayan sejati nalar
-      publik.</p>
+    <p class="cta-intro reveal">Parlemen Bayangan membutuhkan orang-orang yang terbiasa mempertanyakan, membedah, dan menguji setiap gagasan sebelum menerimanya sebagai kebenaran. Bukan mereka yang sekadar paling lantang, tetapi mereka yang mampu menemukan persoalan, menyusun argumentasi, dan menghadirkan sudut pandang tandingan yang dapat dipertanggungjawabkan.<br><br>Kami mencari orang-orang yang siap menjadi bagian dari Parlemen Bayangan.</p>
 
     <div class="criteria-grid">
       <!-- Item 01 -->
       <div class="criteria-card-premium reveal">
         <div class="card-bg-number">01</div>
-        <div class="icon-box">🛡️</div>
+        <div class="icon-box">🔍</div>
         <div class="card-text-content">
-          <h3>Integritas Baja</h3>
-          <p>Tidak bisa dibeli, tidak bisa ditundukkan oleh intimidasi, bujukan oligarki, maupun godaan jabatan semu.
-          </p>
+          <h3>Kritis</h3>
+          <p>Tidak menerima gagasan begitu saja. Terbiasa mempertanyakan asumsi, kepentingan, dan konsekuensi di balik setiap kebijakan.</p>
         </div>
         <div class="card-hover-border"></div>
       </div>
@@ -1431,10 +1388,10 @@
       <!-- Item 02 -->
       <div class="criteria-card-premium reveal">
         <div class="card-bg-number">02</div>
-        <div class="icon-box">⚡</div>
+        <div class="icon-box">🧠</div>
         <div class="card-text-content">
-          <h3>Energi Pembaruan</h3>
-          <p>Membawa nyala perlawanan baru dan perspektif segar. Tidak tersandera oleh dosa dan beban masa lalu.</p>
+          <h3>Analitis</h3>
+          <p>Mampu mengurai persoalan yang kompleks, menemukan akar masalah, serta melihat hubungan antara kebijakan dan dampaknya bagi masyarakat.</p>
         </div>
         <div class="card-hover-border"></div>
       </div>
@@ -1442,11 +1399,10 @@
       <!-- Item 03 -->
       <div class="criteria-card-premium reveal">
         <div class="card-bg-number">03</div>
-        <div class="icon-box">🧠</div>
+        <div class="icon-box">🎯</div>
         <div class="card-text-content">
-          <h3>Ketajaman Analisis</h3>
-          <p>Memiliki pisau bedah keilmuan yang presisi. Berbicara dengan data, membantah dengan fakta yang tak
-            terbantahkan.</p>
+          <h3>Substantif</h3>
+          <p>Tidak berhenti pada slogan, sentimen, atau serangan personal. Kritik diarahkan pada isi gagasan, kualitas argumentasi, dan kelayakan solusi.</p>
         </div>
         <div class="card-hover-border"></div>
       </div>
@@ -1454,11 +1410,10 @@
       <!-- Item 04 -->
       <div class="criteria-card-premium reveal">
         <div class="card-bg-number">04</div>
-        <div class="icon-box">📜</div>
+        <div class="icon-box">📊</div>
         <div class="card-text-content">
-          <h3>Rekam Jejak Teruji</h3>
-          <p>Nama dan karyanya dihormati oleh publik dan gerakan sipil. Konsistensi perjuangannya tidak pernah
-            diragukan.</p>
+          <h3>Berbasis Bukti</h3>
+          <p>Menggunakan data, riset, pengalaman lapangan, dan sumber yang dapat diverifikasi sebagai dasar dalam menyusun kritik.</p>
         </div>
         <div class="card-hover-border"></div>
       </div>
@@ -1466,11 +1421,10 @@
       <!-- Item 05 -->
       <div class="criteria-card-premium reveal">
         <div class="card-bg-number">05</div>
-        <div class="icon-box">🔥</div>
+        <div class="icon-box">🗣️</div>
         <div class="card-text-content">
-          <h3>Keberanian Moral</h3>
-          <p>Berani berdiri sendirian demi kebenaran. Menolak diam dan bungkam saat hak serta nalar publik
-            diinjak-injak.</p>
+          <h3>Mampu Berargumentasi</h3>
+          <p>Dapat menyampaikan pendapat secara runtut, mempertahankan gagasan secara rasional, serta terbuka terhadap bantahan dan koreksi.</p>
         </div>
         <div class="card-hover-border"></div>
       </div>
@@ -1478,23 +1432,32 @@
       <!-- Item 06 -->
       <div class="criteria-card-premium reveal">
         <div class="card-bg-number">06</div>
-        <div class="icon-box">✊</div>
+        <div class="icon-box">🔄</div>
         <div class="card-text-content">
-          <h3>Loyalitas Kerakyatan</h3>
-          <p>Mendedikasikan waktu, tenaga, dan pikiran mutlak murni untuk kepentingan orang banyak. Tanpa kompromi
-            sedikitpun.</p>
+          <h3>Memiliki Perspektif Tanding</h3>
+          <p>Mampu melihat persoalan dari sudut pandang berbeda dan menawarkan alternatif, bukan sekadar menunjukkan apa yang salah.</p>
         </div>
         <div class="card-hover-border"></div>
       </div>
 
-      <!-- Item 07 (Anchor) -->
+      <!-- Item 07 -->
       <div class="criteria-card-premium reveal">
         <div class="card-bg-number">07</div>
+        <div class="icon-box">🛡️</div>
+        <div class="card-text-content">
+          <h3>Independen</h3>
+          <p>Tidak terikat pada kepentingan politik tertentu dan mampu menjaga penilaian tetap objektif, bahkan ketika pendapatnya tidak populer.</p>
+        </div>
+        <div class="card-hover-border"></div>
+      </div>
+
+      <!-- Item 08 -->
+      <div class="criteria-card-premium reveal">
+        <div class="card-bg-number">08</div>
         <div class="icon-box">⚖️</div>
         <div class="card-text-content">
-          <h3>Independensi Mutlak</h3>
-          <p>Bebas 100% dari belenggu partai politik dan kepentingan kekuasaan. Hanya tunduk pada akal sehat konstitusi.
-          </p>
+          <h3>Terbuka untuk Diperdebatkan</h3>
+          <p>Siap menguji gagasan orang lain sekaligus bersedia melihat gagasannya sendiri diuji. Karena kritik yang sehat, tragisnya, memang harus berlaku dua arah.</p>
         </div>
         <div class="card-hover-border"></div>
       </div>
@@ -1507,109 +1470,115 @@
   <section class="formasi-section" id="komisi">
     <div class="formasi-header-wrap">
       <div class="section-label reveal">Komisi Parlemen</div>
-      <h2 class="reveal">Ramping, strategis, <span class="highlight">berbasis urgensi.</span></h2>
-      <p class="formasi-intro reveal">Formasi ini dirancang untuk mencakup isu-isu paling krusial. Setiap portofolio
-        dipilih berdasarkan urgensi nyata yang dirasakan rakyat dan ketersediaan kandidat yang kompeten untuk mengawal
-        kabinet bayangan di setiap lini.</p>
+      <h2 class="reveal">Sejajar, Kritis, <span class="highlight">Berbasis Pengawasan.</span></h2>
+      <p class="formasi-intro reveal">Formasi Parlemen Bayangan disusun sebagai ruang penyeimbang bagi setiap portofolio dalam Kabinet Bayangan. Setiap komisi hadir untuk menelaah gagasan, menguji dasar kebijakan, menilai dampaknya, serta menghadirkan sudut pandang pembanding yang berbasis bukti.<br><br>Parlemen Bayangan tidak bekerja untuk sekadar menyetujui maupun menolak. Setiap gagasan perlu melalui dialog yang terbuka, kritik yang konstruktif, dan pengujian yang substantif agar alternatif kebijakan yang disampaikan kepada publik menjadi lebih matang dan dapat dipertanggungjawabkan.</p>
     </div>
 
     <div class="formasi-grid">
 
-      <!-- Komisi I -->
+      <!-- 01 -->
       <div class="formasi-card reveal">
-        <div class="formasi-num-watermark">I</div>
+        <div class="formasi-num-watermark">01</div>
         <div class="komisi-top-accent"></div>
-        <h3 class="komisi-title">Politik, Hukum, Pertahanan &amp; Diplomasi</h3>
-
-        <div class="komisi-details-group">
-          <div class="komisi-detail-box">
-            <div class="komisi-detail-label">Ruang Lingkup</div>
-            <div class="komisi-detail-text">Politik, hukum, pemerintahan, keamanan, pertahanan, hubungan luar negeri
-            </div>
-          </div>
-          <div class="komisi-detail-box">
-            <div class="komisi-detail-label">Tokoh Pengawal</div>
-            <div class="komisi-detail-text"><strong>Feri Amsari (Koordinator)</strong>, Shofwan Al Banna, Arman
-              Suparman, Yance Arizona, Curie Maharani</div>
-          </div>
-        </div>
+        <h3 class="komisi-title">Komisi Tata Kelola Negara &amp; Akuntabilitas Publik</h3>
       </div>
 
-      <!-- Komisi II -->
+      <!-- 02 -->
       <div class="formasi-card reveal">
-        <div class="formasi-num-watermark">II</div>
+        <div class="formasi-num-watermark">02</div>
         <div class="komisi-top-accent"></div>
-        <h3 class="komisi-title">Ekonomi, Keuangan &amp; Tata Kelola</h3>
-
-        <div class="komisi-details-group">
-          <div class="komisi-detail-box">
-            <div class="komisi-detail-label">Ruang Lingkup</div>
-            <div class="komisi-detail-text">Perekonomian, APBN, investasi, tata kelola negara, reformasi birokrasi</div>
-          </div>
-          <div class="komisi-detail-box">
-            <div class="komisi-detail-label">Tokoh Pengawal</div>
-            <div class="komisi-detail-text"><strong>Bhima Yudhistira (Koordinator)</strong>, Media Wahyudi</div>
-          </div>
-        </div>
+        <h3 class="komisi-title">Komisi Dalam Negeri, Desa, Otonomi Daerah &amp; Keamanan Negara</h3>
       </div>
 
-      <!-- Komisi III -->
+      <!-- 03 -->
       <div class="formasi-card reveal">
-        <div class="formasi-num-watermark">III</div>
+        <div class="formasi-num-watermark">03</div>
         <div class="komisi-top-accent"></div>
-        <h3 class="komisi-title">Pembangunan Manusia</h3>
-
-        <div class="komisi-details-group">
-          <div class="komisi-detail-box">
-            <div class="komisi-detail-label">Ruang Lingkup</div>
-            <div class="komisi-detail-text">Pendidikan, kesehatan, perlindungan perempuan, kelompok rentan, layanan
-              sosial</div>
-          </div>
-          <div class="komisi-detail-box">
-            <div class="komisi-detail-label">Tokoh Pengawal</div>
-            <div class="komisi-detail-text"><strong>Irma Hidayana (Koordinator)</strong>, Iman Zanatul H., Nabiyla Risfa
-              I., Khoirunnisa N.</div>
-          </div>
-        </div>
+        <h3 class="komisi-title">Komisi Hubungan Luar Negeri &amp; Diplomasi</h3>
       </div>
 
-      <!-- Komisi IV -->
+      <!-- 04 -->
       <div class="formasi-card reveal">
-        <div class="formasi-num-watermark">IV</div>
+        <div class="formasi-num-watermark">04</div>
         <div class="komisi-top-accent"></div>
-        <h3 class="komisi-title">Ketahanan Pangan, Lingkungan &amp; Transformasi Digital</h3>
-
-        <div class="komisi-details-group">
-          <div class="komisi-detail-box">
-            <div class="komisi-detail-label">Ruang Lingkup</div>
-            <div class="komisi-detail-text">Pertanian, pangan, lingkungan hidup, perubahan iklim, riset, teknologi,
-              digital</div>
-          </div>
-          <div class="komisi-detail-box">
-            <div class="komisi-detail-label">Tokoh Pengawal</div>
-            <div class="komisi-detail-text"><strong>Iqbal Damanik (Koordinator)</strong>, Isnawati Hidayah, Nenden Sekar
-              A.</div>
-          </div>
-        </div>
+        <h3 class="komisi-title">Komisi Pertahanan &amp; Keamanan Nasional</h3>
       </div>
 
-      <!-- Komisi V (Full Width Anchor) -->
+      <!-- 05 -->
       <div class="formasi-card reveal">
-        <div class="formasi-num-watermark">V</div>
+        <div class="formasi-num-watermark">05</div>
         <div class="komisi-top-accent"></div>
-        <h3 class="komisi-title">Sekretariat, Strategi &amp; Monitoring Kebijakan</h3>
+        <h3 class="komisi-title">Komisi Hak Perempuan &amp; Kelompok Marginal</h3>
+      </div>
 
-        <div class="komisi-details-group" style="flex-direction: row; flex-wrap: wrap; gap: 24px;">
-          <div class="komisi-detail-box" style="flex: 1; min-width: 250px;">
-            <div class="komisi-detail-label">Ruang Lingkup Utama</div>
-            <div class="komisi-detail-text">Sinkronisasi lintas komisi, monitoring, evaluasi, komunikasi publik,
-              penyusunan rekomendasi</div>
-          </div>
-          <div class="komisi-detail-box" style="flex: 1; min-width: 250px;">
-            <div class="komisi-detail-label">Penanggung Jawab</div>
-            <div class="komisi-detail-text"><strong>Ahmad Jilul Q. F. (Sekretaris Kabinet)</strong></div>
-          </div>
-        </div>
+      <!-- 06 -->
+      <div class="formasi-card reveal">
+        <div class="formasi-num-watermark">06</div>
+        <div class="komisi-top-accent"></div>
+        <h3 class="komisi-title">Komisi Hukum, HAM &amp; Kebijakan Negara</h3>
+      </div>
+
+      <!-- 07 -->
+      <div class="formasi-card reveal">
+        <div class="formasi-num-watermark">07</div>
+        <div class="komisi-top-accent"></div>
+        <h3 class="komisi-title">Komisi Perekonomian, BUMN, Industri &amp; Ketenagakerjaan</h3>
+      </div>
+
+      <!-- 08 -->
+      <div class="formasi-card reveal">
+        <div class="formasi-num-watermark">08</div>
+        <div class="komisi-top-accent"></div>
+        <h3 class="komisi-title">Komisi Keuangan Negara &amp; Tata Kelola Anggaran</h3>
+      </div>
+
+      <!-- 09 -->
+      <div class="formasi-card reveal">
+        <div class="formasi-num-watermark">09</div>
+        <div class="komisi-top-accent"></div>
+        <h3 class="komisi-title">Komisi Lingkungan Hidup, Kehutanan, Keanekaragaman Hayati &amp; Pertambangan</h3>
+      </div>
+
+      <!-- 10 -->
+      <div class="formasi-card reveal">
+        <div class="formasi-num-watermark">10</div>
+        <div class="komisi-top-accent"></div>
+        <h3 class="komisi-title">Komisi Pendidikan &amp; Kebudayaan</h3>
+      </div>
+
+      <!-- 11 -->
+      <div class="formasi-card reveal">
+        <div class="formasi-num-watermark">11</div>
+        <div class="komisi-top-accent"></div>
+        <h3 class="komisi-title">Komisi Riset, Teknologi &amp; Digital</h3>
+      </div>
+
+      <!-- 12 -->
+      <div class="formasi-card reveal">
+        <div class="formasi-num-watermark">12</div>
+        <div class="komisi-top-accent"></div>
+        <h3 class="komisi-title">Komisi Kesehatan Publik</h3>
+      </div>
+
+      <!-- 13 -->
+      <div class="formasi-card reveal">
+        <div class="formasi-num-watermark">13</div>
+        <div class="komisi-top-accent"></div>
+        <h3 class="komisi-title">Komisi Perlindungan Sosial &amp; Layanan Dasar</h3>
+      </div>
+
+      <!-- 14 -->
+      <div class="formasi-card reveal">
+        <div class="formasi-num-watermark">14</div>
+        <div class="komisi-top-accent"></div>
+        <h3 class="komisi-title">Komisi Pertanian &amp; Kedaulatan Pangan</h3>
+      </div>
+
+      <!-- 15 (Anchor) -->
+      <div class="formasi-card reveal">
+        <div class="formasi-num-watermark">15</div>
+        <div class="komisi-top-accent"></div>
+        <h3 class="komisi-title">Juru Bicara Parlemen Bayangan</h3>
       </div>
 
     </div>
@@ -1620,10 +1589,8 @@
   <!-- PANEL SELEKSI -->
   <section class="panel-section" id="panel">
     <div class="section-label reveal">Panel Seleksi</div>
-    <h2 class="reveal">Mereka yang <span class="highlight">menilai.</span></h2>
-    <p class="panel-intro reveal">Seleksi formasi parlemen dilakukan oleh panel independen yang kredibilitasnya tidak
-      perlu dipertanyakan. Mereka bukan politisi — mereka adalah profesional dengan rekam jejak nyata di bidang hukum,
-      ekonomi, dan tata kelola pemerintahan.</p>
+    <h2 class="reveal">Mereka Yang <span class="highlight">Menilai.</span></h2>
+    <p class="panel-intro reveal">Seleksi anggota Parlemen Bayangan dilakukan oleh panel independen yang memiliki rekam jejak kuat dalam demokrasi, kebijakan publik, hukum, riset, dan gerakan masyarakat sipil. Mereka bekerja untuk memastikan setiap kandidat memiliki kapasitas untuk berpikir kritis, menguji gagasan secara objektif, serta menyampaikan pandangan yang dapat dipertanggungjawabkan kepada publik.<br><br>Panel tidak mencari mereka yang sekadar lantang berbicara. Kandidat dinilai berdasarkan kedalaman pengetahuan, independensi sikap, kualitas argumentasi, serta kemampuan menghadirkan kritik yang konstruktif dan berbasis bukti.</p>
 
     <div class="panel-grid">
       <div class="panel-card reveal">
@@ -1663,7 +1630,8 @@
   <!-- FAQ -->
   <section class="faq-section" id="faq">
     <div class="section-label reveal">Pertanyaan Umum</div>
-    <h2 class="reveal">Mendedah keraguan, <span class="highlight">menjawab pertanyaan.</span></h2>
+    <h2 class="reveal">Menjawab <span class="highlight">Pertanyaan.</span></h2>
+    <p class="panel-intro reveal" style="margin-bottom: 40px;">Parlemen Bayangan adalah konsep yang relatif baru dalam ruang publik Indonesia. Bagian ini menjawab pertanyaan paling mendasar mengenai tujuan, cara kerja, independensi, dan keterlibatan masyarakat dalam inisiatif ini.</p>
 
     <div class="faq-list">
       <!-- Item 1 -->
@@ -1675,11 +1643,8 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Sebuah platform independen masyarakat sipil yang berfungsi khusus untuk mengawasi <em>Kabinet Bayangan</em>.
-            Kami hadir untuk membedah, menguji, dan memastikan kualitas dari setiap alternatif kebijakan publik yang
-            ditawarkan. Platform ini
-            berfungsi sebagai wadah kolaborasi lintas elemen: akademisi, aktivis, teknokrat, jurnalis, hingga organisasi
-            masyarakat.
+            <p>parlemenbayangan.id adalah inisiatif masyarakat sipil yang dibentuk sebagai ruang pengawasan, pengujian, dan perdebatan kebijakan publik. Parlemen Bayangan menghadirkan perspektif pembanding terhadap gagasan yang ditawarkan oleh Kabinet Bayangan melalui kajian, forum publik, dan kritik berbasis bukti.</p>
+            <p style="margin-top: 12px;">Parlemen Bayangan bukan lembaga negara dan tidak memiliki kewenangan legislasi formal. Kekuatan utamanya terletak pada kualitas argumentasi, keterbukaan proses, dan partisipasi publik.</p>
           </div>
         </div>
       </div>
@@ -1693,9 +1658,8 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Fungsi pengawasan parlemen formal seringkali tumpul akibat dominasi koalisi mayoritas. Ketika sistem
-            <em>checks and balances</em> lumpuh dan gedung wakil rakyat sekadar menjadi stempel karet, masyarakat sipil
-            harus mengambil inisiatif untuk mengisi kekosongan ruang deliberasi tersebut demi merawat nalar publik.
+            <p>Karena demokrasi tidak cukup hanya menyediakan ruang untuk menawarkan kebijakan. Setiap gagasan juga membutuhkan pihak yang berani menguji asumsi, mempertanyakan konsekuensi, dan menghadirkan sudut pandang pembanding.</p>
+            <p style="margin-top: 12px;">Parlemen Bayangan dibentuk agar publik tidak harus menerima sebuah gagasan secara utuh hanya karena terdengar meyakinkan. Setiap usulan perlu diperiksa berdasarkan data, relevansi, dampak, dan kepentingan masyarakat yang akan terpengaruh olehnya.</p>
           </div>
         </div>
       </div>
@@ -1709,9 +1673,8 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <strong>Sama sekali tidak.</strong> Independensi adalah ruh dari gerakan ini. Parlemen Bayangan tidak
-            terafiliasi, tidak didanai, dan tidak bekerja untuk partai politik mana pun. Kami berpihak 100% pada akal
-            sehat konstitusi dan kepentingan masyarakat luas.
+            <p>Tidak. Parlemen Bayangan dirancang sebagai inisiatif independen dan nonpartisan yang tidak menjadi bagian dari partai politik, baik yang berada di dalam maupun di luar pemerintahan.</p>
+            <p style="margin-top: 12px;">Sikap kritis yang disampaikan tidak didasarkan pada posisi politik tertentu, melainkan pada substansi gagasan, kualitas bukti, dampak kebijakan, dan kepentingan publik. Kritik dapat diarahkan kepada siapa pun tanpa harus berubah menjadi kendaraan politik elektoral. Betapa revolusionernya, ternyata gagasan bisa dinilai dari isinya.</p>
           </div>
         </div>
       </div>
@@ -1725,14 +1688,8 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Berbeda dengan LSM yang fokus pada isu tunggal, kami mengadopsi struktur komisi. Kami akan:
-            <ul class="faq-bullets">
-              <li>Menyelenggarakan <em>Shadow Hearing</em> (Sidang Terbuka Rakyat) yang mengundang pakar dan warga
-                terdampak.</li>
-              <li>Membedah kelemahan RUU/Kebijakan dan merilis Kertas Kebijakan Alternatif (<em>Policy Paper</em>).</li>
-              <li>Mengaudit janji kampanye dan mengawasi langsung gagasan-gagasan yang ditawarkan oleh Kabinet Bayangan.
-              </li>
-            </ul>
+            <p>Parlemen Bayangan bekerja melalui komisi-komisi yang mengawasi rumpun kebijakan tertentu. Setiap komisi menelaah dokumen, menguji argumentasi, meminta penjelasan, menghadirkan ahli, dan menyusun pandangan pembanding.</p>
+            <p style="margin-top: 12px;">Proses tersebut dapat dilakukan melalui <em>Shadow Hearing</em>, diskusi publik, kajian kebijakan, tanggapan tertulis, serta publikasi hasil evaluasi. Temuan dan rekomendasi disampaikan secara terbuka agar dapat diperiksa kembali oleh masyarakat.</p>
           </div>
         </div>
       </div>
@@ -1746,9 +1703,8 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Inisiatif ini lahir dari simpul-simpul masyarakat sipil. Saat ini, kepanitiaan awal dikawal oleh tokoh-tokoh
-            kredibel seperti <strong>Feri Amsari</strong> (Pakar Hukum Tata Negara) dan <strong>Ahmad Jilul
-              Q.F.</strong>, dan terus diperluas dengan melibatkan ahli di bidang ekonomi, lingkungan, dan teknologi.
+            <p>Inisiatif ini digerakkan oleh koalisi masyarakat sipil yang terdiri atas profesional, akademisi, peneliti, praktisi, aktivis, dan warga dengan kompetensi di berbagai bidang kebijakan.</p>
+            <p style="margin-top: 12px;">Anggota komisi dipilih berdasarkan pengetahuan, pengalaman, independensi, dan kemampuan berpikir kritis. Mereka tidak ditempatkan sebagai pemilik kebenaran, melainkan sebagai penguji yang argumennya juga tetap terbuka untuk dikritik publik.</p>
           </div>
         </div>
       </div>
@@ -1762,9 +1718,8 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <strong>Tidak ada insentif finansial.</strong> Seluruh posisi di Parlemen Bayangan bersifat <em>pro
-              bono</em> (sukarela). Anggotanya adalah para profesional dengan karir utamanya masing-masing. Di situlah
-            letak kekuatan gerakan ini: independen, tidak terikat transaksi, dan tidak bisa dibeli.
+            <p>Keanggotaan Parlemen Bayangan bukan jabatan publik formal maupun pekerjaan tetap. Keterlibatan anggota pada dasarnya didorong oleh komitmen profesional dan tanggung jawab kewargaan untuk memperkuat kualitas diskusi kebijakan.</p>
+            <p style="margin-top: 12px;">Apabila terdapat dukungan operasional untuk riset, kegiatan, atau kebutuhan teknis, mekanismenya akan dikelola secara transparan. Informasi mengenai pembiayaan dan dukungan sumber daya juga harus dapat diakses serta dipertanggungjawabkan kepada publik.</p>
           </div>
         </div>
       </div>
@@ -1778,9 +1733,8 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Suara Anda adalah amunisi kami. Anda bisa berpartisipasi dengan: memberikan rekomendasi tokoh kredibel untuk
-            masuk ke dalam komisi, mengirimkan data kejanggalan kebijakan di lapangan, atau ikut berdebat secara
-            konstruktif dalam sesi <em>Shadow Hearing</em> publik kami.
+            <p>Masyarakat dapat terlibat dengan mengirimkan pertanyaan, data, kajian, kritik, atau usulan isu yang perlu dibahas oleh komisi. Publik juga dapat mengikuti <em>Shadow Hearing</em>, forum diskusi, konsultasi terbuka, serta proses evaluasi kebijakan yang diselenggarakan.</p>
+            <p style="margin-top: 12px;">Keterlibatan tidak dibatasi pada orang yang memiliki gelar atau jabatan tertentu. Pengalaman warga yang terdampak langsung oleh suatu kebijakan juga merupakan pengetahuan penting yang harus masuk ke ruang pembahasan.</p>
           </div>
         </div>
       </div>
@@ -1793,28 +1747,27 @@
   <!-- REGISTRATION -->
   <section class="register-section" id="gabung">
     <div class="section-label reveal">Registrasi &amp; Rekomendasi</div>
-    <h2 class="reveal" style="margin-bottom:16px;">Anda punya nama kandidat atau ingin terjun langsung?</h2>
+    <h2 class="reveal" style="margin-bottom:16px;">Anda Punya Nama Kandidat Atau Ingin Terlibat Langsung?</h2>
     <br>
     <div class="register-grid">
       <div class="register-card reveal">
         <div class="card-number">01</div>
         <h3>Rekomendasikan Tokoh</h3>
-        <p>Punya kandidat yang Anda rasa cocok menjadi anggota "Komisi" parlemen ini? Kirimkan rekomendasi Anda.</p>
+        <p>Punya kandidat yang Anda nilai tepat untuk menjadi bagian dari Parlemen Bayangan? Kirimkan nama, bidang keahlian, serta alasan mengapa tokoh tersebut layak menguji dan mengkritisi kebijakan secara substantif.</p>
         <a href="https://forms.gle/4gugKXK7ShDKzQqE7" target="_blank" rel="noopener noreferrer" class="btn-primary">Isi Form Rekomendasi →</a>
       </div>
       <div class="register-card reveal">
         <div class="card-number">02</div>
         <h3>Jadilah Bagian dari Kami</h3>
-        <p>Jika Anda merasa terpanggil dan memiliki kompetensi yang kami cari, kirimkan lamaran dan profil singkat Anda.
-        </p>
-        <a href="mailto:panitia@parlemenbayangan.id" class="btn-outline">📧 panitia@parlemenbayangan.id</a>
+        <p>Jika Anda memiliki kompetensi, ketajaman berpikir, dan komitmen terhadap kritik yang berbasis bukti, kirimkan profil singkat serta bidang kebijakan yang ingin Anda kawal.</p>
+        <a href="mailto:panitia@parlemenbayangan.id" class="btn-outline">📧 PANITIA@PARLEMENBAYANGAN.ID</a>
       </div>
     </div>
   </section>
 
   <!-- CLOSING -->
   <section class="closing">
-    <p class="reveal">Saatnya nalar publik punya <span>taji</span>.<br>Mari menguji kebijakan dengan <span>bukti</span>.
+    <p class="reveal">Saatnya Setiap Gagasan Mendapat <span>Penyeimbang</span>.<br>Mari Menguji Dengan <span>Bukti</span>.
     </p>
   </section>
 
